@@ -43,7 +43,7 @@ public class ProfileServiceImpl implements ProfileService {
 	public Profile[] getProfiles() {
 		Profile[] profiles = restTemplate().getForObject(apiUri, Profile[].class);
 		for (Profile record : profiles) {
-			log.info(record.toString());
+			log.debug(record.toString());
 		}
 		return profiles;
 	}
@@ -54,7 +54,7 @@ public class ProfileServiceImpl implements ProfileService {
 		Profile[] data = restTemplate().getForObject(apiUri, Profile[].class);
 		for (Profile record : data) {
 			if (record.getId().equals(id)) {
-				log.info(id + " found.");
+				log.debug(id + " found.");
 				profile = record;
 			}
 		}
