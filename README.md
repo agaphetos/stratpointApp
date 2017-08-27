@@ -43,9 +43,8 @@ This will return a JSON text of all profiles returned from our REST API
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [STS](https://spring.io/tools) - An all-in-one Eclipse based IDE for Java Spring Development
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Versioning
 
