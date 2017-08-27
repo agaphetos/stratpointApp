@@ -14,12 +14,10 @@ This will be running on http://localhost:8080/ as a REST API
 
 What things you need to make it running
 
-```
 * [Java JDK 1.6+ or higher](http://www.oracle.com/technetwork/indexes/downloads/index.html)
 * [Maven](https://maven.apache.org/download.cgi)
 * [Eclipse](https://www.eclipse.org/downloads/?)
 * or TextEditors of your choice (Atom, Sublime, VSCode, Notepad++)
-```
 
 ### Installing
 
