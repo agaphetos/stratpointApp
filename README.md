@@ -43,6 +43,8 @@ This will return a JSON text of all profiles returned from our REST API
 
 * [STS](https://spring.io/tools) - An all-in-one Eclipse based IDE for Java Spring Development
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Java](https://www.java.com/en/) - Programming Language
+* [Spring Boot](https://projects.spring.io/spring-boot/) - an application framework and inversion of control container for the Java platform
 
 ## Versioning
 
