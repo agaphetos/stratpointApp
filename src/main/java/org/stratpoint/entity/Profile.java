@@ -2,6 +2,10 @@ package org.stratpoint.entity;
 
 import java.util.Date;
 
+/*
+ * Entity Class for Profile
+ * contains elements for Profile
+ */
 public class Profile {
 	private String id;
 	private Boolean active;
@@ -15,6 +19,10 @@ public class Profile {
 	private String address;
 	private String profile;
 	private Date dateRegistered;
+	
+	/*
+	 * Getter and Setters
+	 */
 	
 	public String getId() {
 		return id;
@@ -112,6 +120,13 @@ public class Profile {
 		this.dateRegistered = dateRegistered;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * Returns String format of all elements on this class
+	 * 
+	 * This method overrides toString() method with our custom String format for this class
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "User{" +

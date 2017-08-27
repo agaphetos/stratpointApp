@@ -11,9 +11,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
+/*
+ * Configuration for WebMvc
+ * This class defines the custom implementation for HttpMessageConverters  
+ */
+
 @Configuration
 public class WebConfig extends WebMvcConfigurationSupport {
 	
+	/*
+	 * Returns MappingJackson2HttpMessageConverter
+	 * This method implements an ObjectMapper with support for PropertyNamingStrategy.SNAKE_CASE
+	 * which translates element of an Object with names in camelCase to be translated to snake_case
+	 */
 	@Bean
 	public MappingJackson2HttpMessageConverter customJackson2HttpMessageConverter() {
 		MappingJackson2HttpMessageConverter jsonConverter = new MappingJackson2HttpMessageConverter();
@@ -25,6 +35,11 @@ public class WebConfig extends WebMvcConfigurationSupport {
 		return jsonConverter;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * This method overrides default HttpMesageConverters and adds our custom HttpMessageConverter
+	 * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport#configureMessageConverters(java.util.List)
+	 */
 	@Override
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 		converters.add(customJackson2HttpMessageConverter());

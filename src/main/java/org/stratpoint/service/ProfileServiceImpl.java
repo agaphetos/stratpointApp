@@ -15,12 +15,24 @@ import org.stratpoint.entity.Profile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
+/*
+ * This class contains implementation for our methods in ProfileService Class
+ * Serves as a Service using @Service annotation 
+ */
 @Service("profileService")
 public class ProfileServiceImpl implements ProfileService {
 	private static final Logger log = LoggerFactory.getLogger(ProfileServiceImpl.class);
 	
+	/*
+	 * apiUrl for our JSON API
+	 */
 	private String apiUri = "http://s3-ap-southeast-1.amazonaws.com/fundo/js/profiles.json";
 	
+	/*
+	 * This method returns a RestTemplate with custom ObjectMapper
+	 * to translate snake_case elements from our JSON API to camelCase elements on our application
+	 * Annotated as Bean to define a Singleton method instance
+	 */
 	@Bean
 	public RestTemplate restTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
@@ -39,6 +51,12 @@ public class ProfileServiceImpl implements ProfileService {
 		return restTemplate;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * This method contains implementation of getProfiles
+	 * @return	Profile[]	collection of Profiles from our JSON API
+	 * @see org.stratpoint.service.ProfileService#getProfiles()
+	 */
 	@Override
 	public Profile[] getProfiles() {
 		Profile[] profiles = restTemplate().getForObject(apiUri, Profile[].class);
@@ -48,6 +66,13 @@ public class ProfileServiceImpl implements ProfileService {
 		return profiles;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * This method contains implementation of getProfile
+	 * @param 	String		id for our specific Profile
+	 * @return	Profile		a specific Profile from JSON API
+	 * @see org.stratpoint.service.ProfileService#getProfile(java.lang.String)
+	 */
 	@Override
 	public Profile getProfile(String id) {
 		Profile profile = new Profile();
